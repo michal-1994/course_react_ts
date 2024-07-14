@@ -1,10 +1,11 @@
 /** @format */
 
 import "./App.css";
-import CourseGoal, { type CourseGoalProps } from "./components/CourseGoal";
+import { type CourseGoalProps } from "./components/CourseGoal";
 import Header from "./components/Header";
 import goalsImg from "./assets/goals.jpg";
 import { useState } from "react";
+import CourseGoalList from "./components/CourseGoalList";
 
 function App() {
   const [goals, setGoals] = useState<CourseGoalProps[]>([]);
@@ -26,15 +27,7 @@ function App() {
         <h1>Your Course Goals</h1>
       </Header>
       <button onClick={handleAddGoal}>Add Goal</button>
-      {goals.map((goal) => (
-        <li key={goal.id}>
-          <CourseGoal
-            key={goal.id}
-            title={goal.title}
-            description={goal.description}
-          />
-        </li>
-      ))}
+      <CourseGoalList goals={goals} />
     </main>
   );
 }
