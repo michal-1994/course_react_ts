@@ -4,7 +4,7 @@ export interface CourseGoalProps {
   id: number;
   title: string;
   description: string;
-  onDelete: (id: number) => void;
+  onDelete?: (id: number) => void;
 }
 
 const CourseGoal = ({ id, title, description, onDelete }: CourseGoalProps) => {
@@ -14,7 +14,7 @@ const CourseGoal = ({ id, title, description, onDelete }: CourseGoalProps) => {
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <button onClick={() => onDelete!(id)}>Delete</button>
     </article>
   );
 };
