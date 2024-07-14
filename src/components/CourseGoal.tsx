@@ -1,12 +1,11 @@
 /** @format */
 
-const CourseGoal = ({
-  title,
-  description,
-}: {
+export interface CourseGoalProps {
   title: string;
   description: string;
-}) => {
+}
+
+const CourseGoal = ({ title, description }: CourseGoalProps) => {
   return (
     <article>
       <div>
