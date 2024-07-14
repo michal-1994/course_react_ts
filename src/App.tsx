@@ -11,12 +11,12 @@ import NewGoal from "./components/NewGoal";
 function App() {
   const [goals, setGoals] = useState<CourseGoalProps[]>([]);
 
-  const handleAddGoal = () => {
+  const handleAddGoal = (goal: string, summary: string) => {
     setGoals((prevGoals) => {
       const newGoal: CourseGoalProps = {
         id: Math.random(),
-        title: "Learn React + TS",
-        description: "Learn React + TS description",
+        title: goal,
+        description: summary,
       };
       return [...prevGoals, newGoal];
     });
@@ -33,7 +33,7 @@ function App() {
       <Header image={{ src: goalsImg, alt: "A list of goals" }}>
         <h1>Your Course Goals</h1>
       </Header>
-      <NewGoal />
+      <NewGoal onAddGoal={handleAddGoal} />
       <CourseGoalList onDeleteGoal={handleDeleteGoal} goals={goals} />
     </main>
   );
