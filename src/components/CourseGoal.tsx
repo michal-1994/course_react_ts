@@ -1,6 +1,7 @@
 /** @format */
 
 export interface CourseGoalProps {
+  id?: number;
   title: string;
   description: string;
 }
