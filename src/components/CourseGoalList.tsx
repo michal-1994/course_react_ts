@@ -1,6 +1,6 @@
 /** @format */
 
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import CourseGoal, { type CourseGoalProps } from "./CourseGoal";
 import InfoBox from "./InfoBox";
 
@@ -22,7 +22,7 @@ const CourseGoalList = ({ goals, onDeleteGoal }: CourseGoalListProps) => {
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode='warning'>
+      <InfoBox mode='warning' severity='high'>
         You're collecting a log of goals. Don't put too much on your plate!
       </InfoBox>
     );
